@@ -41,7 +41,6 @@ function getJokes(e) {
         .then(res => {
             const data = document.querySelector('.data').textContent = res.value.joke
 
-            console.log(res);
 
 
         })
@@ -54,23 +53,23 @@ function getJokes(e) {
 
 // document.querySelector(".button").addEventListener("click", getJoke);
 
-function getJoke() {
+// function getJoke() {
 
 
-    const http = new Http;
-    http.get('http://api.icndb.com/categories')
-        .then(res => {
+//     const http = new Http;
+//     http.get('http://api.icndb.com/categories')
+//         .then(res => {
 
 
-            console.log(res);
+//             console.log(res);
 
 
-        })
+//         })
 
 
-}
+// }
 
-getJoke()
+// getJoke()
 
 // async function getJokes(){
 
