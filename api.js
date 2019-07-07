@@ -37,7 +37,7 @@ function getJokes(e) {
 
 
     const http = new Http;
-    http.get('http://api.icndb.com/jokes/random?exclude=catagory')
+    http.get('https://api.icndb.com/jokes/random?exclude=catagory')
         .then(res => {
             const data = document.querySelector('.data').textContent = res.value.joke
 
