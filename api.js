@@ -20,31 +20,42 @@ document.querySelector(".btn").addEventListener("click", getJokes);
 
 function getJokes(e) {
 
-    e.preventDefault()
+
     let catagory = [];
 
 
     if (nerdy.checked && explicit.checked) {
         catagory += ["nerdy", "explicit"]
+
+        const http = new Http;
+        http.get('https://api.icndb.com/jokes/random?exclude=catagory')
+            .then(res => {
+                const data = document.querySelector('.data').textContent = res.value.joke
+
+            })
+
     } else if (nerdy.checked) {
         catagory += "nerdy";
 
+        const http = new Http;
+        http.get('https://api.icndb.com/jokes/random?exclude=catagory')
+            .then(res => {
+                const data = document.querySelector('.data').textContent = res.value.joke
+
+            })
 
     } else if (explicit.checked) {
         catagory += "explicit";
+        const http = new Http;
+        http.get('https://api.icndb.com/jokes/random?exclude=catagory')
+            .then(res => {
+                const data = document.querySelector('.data').textContent = res.value.joke
+
+            })
+
+    } else {
+        alert("plz select a catagory");
     }
-
-
-
-    const http = new Http;
-    http.get('https://api.icndb.com/jokes/random?exclude=catagory')
-        .then(res => {
-            const data = document.querySelector('.data').textContent = res.value.joke
-
-
-
-        })
-
 
 }
 
